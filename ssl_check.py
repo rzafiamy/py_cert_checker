@@ -66,6 +66,10 @@ def main():
     domains = get_domains_from_file(file_path)
     report = ssl_report(domains)
 
+    # if second column is not integer, replace it with -1
+    for row in report['data']:
+        if not isinstance(row[2], int):
+            row[2] = -99999
     # sort by days remaining
     report['data'].sort(key=lambda x: x[2])
     print(tabulate.tabulate(report['data'], headers=report['headers'], tablefmt="grid"))
