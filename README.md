@@ -25,6 +25,12 @@ expired.badssl.com
 python ssl_check.py path/to/your/domains.txt
 ```
 
+Or just use the script `run.sh`, it will generate a file called `report.dat`
+
+```bash
+./run.sh
+```
+
 The script will output the SSL certificate status for each domain in a table format, indicating whether the certificate is valid, expired, or if the SSL check failed, along with the days remaining or overdue.
 
 ## Example Output
